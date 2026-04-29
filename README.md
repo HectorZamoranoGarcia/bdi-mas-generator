@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🧠 BDI-MAS Generator
+# BDI-MAS Generator
 
 **Sistema Multi-Agente ADK para Generación Automática de Sistemas BDI en Jason**
 
@@ -17,7 +17,7 @@
 
 ---
 
-## 📋 Descripción
+## Descripción
 
 **BDI-MAS Generator** recibe un prompt del usuario describiendo un problema y genera automáticamente un proyecto **Jason/AgentSpeak** completo, incluyendo:
 
@@ -26,7 +26,7 @@
 
 El sistema utiliza **Google ADK** como framework de orquestación, implementando los tres tipos de `WorkflowAgent` disponibles para coordinar las distintas fases del proceso de generación.
 
-## 🏗️ Arquitectura
+## Arquitectura
 
 ```
 root_pipeline (SequentialAgent)
@@ -62,7 +62,7 @@ root_pipeline (SequentialAgent)
 | `save_mas_code` | Guarda el proyecto final en `output/` |
 | `exit_loop` | Señal de parada del bucle de refinamiento |
 
-## 📁 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
 bdi-mas-generator/
@@ -94,7 +94,7 @@ bdi-mas-generator/
 └── LICENSE
 ```
 
-## 🚀 Instalación
+## Instalación
 
 ### Requisitos previos
 
@@ -149,7 +149,7 @@ $env:JASON_BIN="C:\ruta\a\jason.bat"
 python -m bdi_mas.update_rag
 ```
 
-## 💡 Uso
+## Uso
 
 ### Ejecutar con ADK CLI
 
@@ -167,7 +167,7 @@ comienza con precio 100 y lo baja de 10 en 10 hasta que alguien acepte.
 
 El sistema generará automáticamente los archivos `.mas2j` y `.asl` en la carpeta `output/`.
 
-## 📊 Ejemplos de Evaluación
+## Ejemplos de Evaluación
 
 Cada ejemplo incluye el prompt utilizado y los archivos Jason generados:
 
@@ -185,7 +185,7 @@ cd evaluation/fibonacci
 jason mas start --mas2j=fibonacci.mas2j --console
 ```
 
-## 🛠️ Tecnologías
+## Tecnologías
 
 - **[Google ADK](https://google.com)** — Framework de orquestación multi-agente
 - **[LiteLLM](https://litellm.ai)** — Proxy para endpoints LLM OpenAI-compatibles
@@ -193,7 +193,7 @@ jason mas start --mas2j=fibonacci.mas2j --console
 - **[Jason](https://jason-lang.github.io/jason/)** — Plataforma BDI para AgentSpeak
 - **[PoliGPT](https://poligpt.upv.es/)** — Endpoint LLM de la UPV
 
-## 📄 Licencia
+## Licencia
 
 Este proyecto está licenciado bajo la [Licencia MIT](LICENSE).
 
