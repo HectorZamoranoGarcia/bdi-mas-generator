@@ -1,0 +1,1 @@
+Crea un sistema multi-agente en Jason con dos agentes: uno envía un mensaje "Ping" y el otro le contesta con un "Pong". Ambos imprimen el mensaje recibido. Solo una iteración.

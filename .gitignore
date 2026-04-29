@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Entornos virtuales
+.venv/
+venv/
+env/
+
+# Variables de entorno (contienen API keys)
+.env
+!.env.example
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+__MACOSX/
+Thumbs.db
+Desktop.ini
+
+# ChromaDB / RAG
+.rag_db/
+
+# Jason temporales
+temp_mas_project/
+*.class
+*.jar
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs
+*.log
+
+# Assignment PDF (not for public distribution)
+AIN_2026_S6.pdf
+
+# Generated output
+output/
+
+# Professor notes (not for public distribution)
+Explicaci*

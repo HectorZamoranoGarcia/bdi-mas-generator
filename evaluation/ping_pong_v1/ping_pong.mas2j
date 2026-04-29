@@ -1,0 +1,6 @@
+MAS ping_pong {
+    infrastructure: Centralised
+    agents:
+        pinger;
+        ponger;
+}

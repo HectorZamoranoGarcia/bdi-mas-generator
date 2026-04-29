@@ -1,0 +1,1 @@
+Crea un sistema multi-agente en Jason que implemente una Subasta Holandesa con un agente subastador y 3 agentes participantes. El subastador comienza con un precio alto y lo va bajando hasta que un participante acepta.

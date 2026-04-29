@@ -1,0 +1,6 @@
+MAS dutch_auction {
+    infrastructure: Centralised
+    agents:
+        auctioneer;
+        participant #3;
+}
