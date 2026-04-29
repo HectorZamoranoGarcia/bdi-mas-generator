@@ -18,9 +18,7 @@ from pathlib import Path
 
 from google.adk.tools.tool_context import ToolContext
 
-# ─────────────────────────────────────────────────────────
-#  Directorio de salida y estado global de reintentos
-# ─────────────────────────────────────────────────────────
+# Directorio de salida y estado global de reintentos
 
 OUTPUT_DIR = Path("output")
 OUTPUT_DIR.mkdir(exist_ok=True)
@@ -31,9 +29,7 @@ best_mas_state = {}
 best_error_count = float("inf")
 
 
-# ─────────────────────────────────────────────────────────
-#  Utilidad: localizar el binario de Jason
-# ─────────────────────────────────────────────────────────
+# Utilidad: localizar el binario de Jason
 
 def resolve_jason_command():
     """
@@ -65,9 +61,7 @@ def resolve_jason_command():
     return None
 
 
-# ─────────────────────────────────────────────────────────
-#  Tool 1: Búsqueda de ejemplos en GitHub
-# ─────────────────────────────────────────────────────────
+# Búsqueda de ejemplos en GitHub
 
 def search_github_examples(path: str = "") -> str:
     """
@@ -122,9 +116,7 @@ def search_github_examples(path: str = "") -> str:
         return f"Error al intentar acceder a los ejemplos: {e}"
 
 
-# ─────────────────────────────────────────────────────────
-#  Tool 2: Compilar / ejecutar MAS en directorio temporal
-# ─────────────────────────────────────────────────────────
+# Compilar / ejecutar MAS en directorio temporal
 
 def test_mas_code(mas2j_code: str, agents_dict: dict) -> str:
     """
@@ -230,9 +222,7 @@ def test_mas_code(mas2j_code: str, agents_dict: dict) -> str:
             shutil.rmtree(temp_dir)
 
 
-# ─────────────────────────────────────────────────────────
-#  Tool 3: Persistir MAS final en disco
-# ─────────────────────────────────────────────────────────
+# Persistir MAS final en disco
 
 def save_mas_code(
     mas_name: str, mas2j_code: str = "", agents_dict: dict = None
@@ -283,9 +273,7 @@ def save_mas_code(
         return f"ERROR inesperado al guardar: {e}"
 
 
-# ─────────────────────────────────────────────────────────
-#  Tool 4: Señal de parada para LoopAgent
-# ─────────────────────────────────────────────────────────
+# Señal de parada para LoopAgent
 
 def exit_loop(tool_context: ToolContext):
     """

@@ -41,9 +41,7 @@ from .tools import (
     test_mas_code,
 )
 
-# ─────────────────────────────────────────────────────────
-#  Configuración del modelo LLM
-# ─────────────────────────────────────────────────────────
+# Configuración del modelo LLM
 
 model = LiteLlm(
     model=os.getenv("LLM_MODEL", "openai/Qwen3.6-35B-A3B-FP8"),
@@ -52,9 +50,7 @@ model = LiteLlm(
 )
 
 
-# ═════════════════════════════════════════════════════════
-#  AGENTE 1 — Analista de Requisitos
-# ═════════════════════════════════════════════════════════
+# Analista de Requisitos
 
 requirement_analyst = LlmAgent(
     name="requirement_analyst",
@@ -77,9 +73,7 @@ requirement_analyst = LlmAgent(
 )
 
 
-# ═════════════════════════════════════════════════════════
-#  AGENTE 2a — Investigador de ejemplos en GitHub
-# ═════════════════════════════════════════════════════════
+# Investigador de ejemplos en GitHub
 
 github_researcher = LlmAgent(
     name="github_researcher",
@@ -104,9 +98,7 @@ github_researcher = LlmAgent(
 )
 
 
-# ═════════════════════════════════════════════════════════
-#  AGENTE 2b — Investigador de documentación local (RAG)
-# ═════════════════════════════════════════════════════════
+# Investigador de documentación local (RAG)
 
 docs_researcher = LlmAgent(
     name="docs_researcher",
@@ -132,9 +124,7 @@ docs_researcher = LlmAgent(
 )
 
 
-# ═════════════════════════════════════════════════════════
-#  AGENTE 2 — Equipo de Investigación (PARALELO)
-# ═════════════════════════════════════════════════════════
+# Equipo de Investigación (PARALELO)
 
 research_team = ParallelAgent(
     name="research_team",
@@ -146,9 +136,7 @@ research_team = ParallelAgent(
 )
 
 
-# ═════════════════════════════════════════════════════════
-#  AGENTE 3a — Desarrollador BDI (dentro del loop)
-# ═════════════════════════════════════════════════════════
+# Desarrollador BDI (dentro del loop)
 
 bdi_developer = LlmAgent(
     name="bdi_developer",
@@ -192,9 +180,7 @@ bdi_developer = LlmAgent(
 )
 
 
-# ═════════════════════════════════════════════════════════
-#  AGENTE 3b — Revisor de código (dentro del loop)
-# ═════════════════════════════════════════════════════════
+# Revisor de código (dentro del loop)
 
 code_reviewer = LlmAgent(
     name="code_reviewer",
@@ -226,9 +212,7 @@ code_reviewer = LlmAgent(
 )
 
 
-# ═════════════════════════════════════════════════════════
-#  AGENTE 3 — Bucle de Refinamiento (LOOP)
-# ═════════════════════════════════════════════════════════
+# Bucle de Refinamiento (LOOP)
 
 code_refinement = LoopAgent(
     name="code_refinement",
@@ -242,9 +226,7 @@ code_refinement = LoopAgent(
 )
 
 
-# ═════════════════════════════════════════════════════════
-#  AGENTE 4 — Guardado Final
-# ═════════════════════════════════════════════════════════
+# Guardado Final
 
 code_saver = LlmAgent(
     name="code_saver",
@@ -269,9 +251,7 @@ code_saver = LlmAgent(
 )
 
 
-# ═════════════════════════════════════════════════════════
-#  ROOT — Pipeline Secuencial Principal (SEQUENTIAL)
-# ═════════════════════════════════════════════════════════
+# Pipeline Secuencial Principal (SEQUENTIAL)
 
 root_agent = SequentialAgent(
     name="bdi_mas_generator",

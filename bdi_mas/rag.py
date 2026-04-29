@@ -17,9 +17,7 @@ DOCS_PATH = [str(BASE_DIR / "docs")]
 VECTORSTORE = None
 
 
-# ─────────────────────────────────────────────────────────
-#  Carga y fragmentación de documentos
-# ─────────────────────────────────────────────────────────
+# Carga y fragmentación de documentos
 
 def load_documents(paths):
     """Lee documentos de las rutas dadas (.pdf, .txt, .md, .asl, .java, .html)."""
@@ -69,9 +67,7 @@ def chunk_text(text, chunk_size=800, overlap=120):
     return chunks
 
 
-# ─────────────────────────────────────────────────────────
-#  Construcción del vectorstore
-# ─────────────────────────────────────────────────────────
+# Construcción del vectorstore
 
 def build_vectorstore(paths):
     """Construye o recupera la colección ChromaDB con los documentos indexados."""
@@ -117,9 +113,7 @@ def init_rag(paths=None):
         VECTORSTORE = build_vectorstore(paths)
 
 
-# ─────────────────────────────────────────────────────────
-#  Tool expuesta a los agentes ADK
-# ─────────────────────────────────────────────────────────
+# Tool expuesta a los agentes ADK
 
 def search_local_docs(query: str, k: int = 4) -> str:
     """
