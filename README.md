@@ -105,7 +105,7 @@ bdi-mas-generator/
 ### 1. Clonar el repositorio
 
 ```bash
-git clone https://github.com/hectorzamorano/bdi-mas-generator.git
+git clone https://github.com/HectorZamoranoGarcia/bdi-mas-generator.git
 cd bdi-mas-generator
 ```
 
