@@ -5,8 +5,8 @@
 **Sistema Multi-Agente ADK para Generación Automática de Sistemas BDI en Jason**
 
 [![Python 3.11+](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)](https://python.org)
-[![Google ADK](https://img.shields.io/badge/Google-ADK-4285F4?logo=google&logoColor=white)](https://github.com/google/adk-python)
-[![Jason 3.3](https://img.shields.io/badge/Jason-3.3.0-orange)](https://github.com/jason-lang/jason)
+[![Google ADK](https://img.shields.io/badge/Google-ADK-4285F4?logo=google&logoColor=white)](https://google.com)
+[![Jason 3.3](https://img.shields.io/badge/Jason-3.3.0-orange)](https://jason-lang.github.io/jason/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 <br>
@@ -34,7 +34,7 @@ root_pipeline (SequentialAgent)
 ├── 1. requirement_analyst        →  Análisis de requisitos del prompt
 │
 ├── 2. research_team (ParallelAgent)
-│   ├── github_researcher         →  Búsqueda de ejemplos oficiales en GitHub
+│   ├── github_researcher         →  Búsqueda de ejemplos oficiales de Jason
 │   └── docs_researcher           →  Consulta RAG sobre documentación local
 │
 ├── 3. code_refinement (LoopAgent, max_iterations=5)
@@ -49,14 +49,14 @@ root_pipeline (SequentialAgent)
 | Tipo | Agente | Propósito |
 |------|--------|-----------|
 | `SequentialAgent` | `root_pipeline` | Orquesta las fases del pipeline con dependencias secuenciales |
-| `ParallelAgent` | `research_team` | Ejecuta búsquedas de GitHub y RAG simultáneamente |
+| `ParallelAgent` | `research_team` | Ejecuta búsquedas de ejemplos y RAG simultáneamente |
 | `LoopAgent` | `code_refinement` | Ciclo iterativo de generación → prueba → corrección |
 
 ### Herramientas (Tools)
 
 | Tool | Descripción |
 |------|-------------|
-| `search_github_examples` | Consulta la API de GitHub para obtener ejemplos oficiales de Jason |
+| `search_github_examples` | Consulta el repositorio oficial de Jason para obtener ejemplos de código |
 | `search_local_docs` | Búsqueda semántica RAG sobre documentación local (ChromaDB) |
 | `test_mas_code` | Compila y ejecuta el MAS en un directorio temporal con Jason |
 | `save_mas_code` | Guarda el proyecto final en `output/` |
@@ -102,10 +102,9 @@ bdi-mas-generator/
 - **Java 21** (JDK) — necesario para ejecutar Jason
 - **Jason 3.3.0** — plataforma BDI
 
-### 1. Clonar el repositorio
+### 1. Descargar el proyecto
 
 ```bash
-git clone https://github.com/HectorZamoranoGarcia/bdi-mas-generator.git
 cd bdi-mas-generator
 ```
 
@@ -133,7 +132,7 @@ cp bdi_mas/.env.example bdi_mas/.env
 ### 4. Instalar Jason
 
 ```bash
-# Descargar desde: https://github.com/jason-lang/jason/releases
+# Descargar desde: https://jason-lang.github.io/jason/
 # Descomprimir y configurar:
 
 # Linux/macOS
@@ -188,10 +187,10 @@ jason mas start --mas2j=fibonacci.mas2j --console
 
 ## 🛠️ Tecnologías
 
-- **[Google ADK](https://github.com/google/adk-python)** — Framework de orquestación multi-agente
-- **[LiteLLM](https://github.com/BerriAI/litellm)** — Proxy para endpoints LLM OpenAI-compatibles
+- **[Google ADK](https://google.com)** — Framework de orquestación multi-agente
+- **[LiteLLM](https://litellm.ai)** — Proxy para endpoints LLM OpenAI-compatibles
 - **[ChromaDB](https://www.trychroma.com/)** — Base de datos vectorial para RAG
-- **[Jason](https://github.com/jason-lang/jason)** — Plataforma BDI para AgentSpeak
+- **[Jason](https://jason-lang.github.io/jason/)** — Plataforma BDI para AgentSpeak
 - **[PoliGPT](https://poligpt.upv.es/)** — Endpoint LLM de la UPV
 
 ## 📄 Licencia

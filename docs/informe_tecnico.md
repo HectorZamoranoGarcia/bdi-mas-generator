@@ -27,8 +27,8 @@ root_pipeline (SequentialAgent)
 │
 ├── 2. research_team (ParallelAgent)
 │   ├── github_researcher (LlmAgent)
-│   │     Busca ejemplos oficiales de Jason en GitHub mediante la API
-│   │     REST, seleccionando los más relevantes para el problema.
+│   │     Busca ejemplos oficiales de Jason en el repositorio
+│   │     oficial, seleccionando los más relevantes para el problema.
 │   │     → output_key: "github_examples"
 │   │
 │   └── docs_researcher (LlmAgent)
@@ -59,14 +59,14 @@ root_pipeline (SequentialAgent)
 | Tipo | Agente | Justificación |
 |------|--------|---------------|
 | **SequentialAgent** | `root_pipeline` | Las fases del pipeline tienen dependencias estrictas: no se puede generar código sin antes investigar, ni guardarlo sin antes probarlo. |
-| **ParallelAgent** | `research_team` | La búsqueda en GitHub y la consulta RAG son independientes entre sí. Ejecutarlas en paralelo reduce la latencia total. |
+| **ParallelAgent** | `research_team` | La búsqueda de ejemplos oficiales y la consulta RAG son independientes entre sí. Ejecutarlas en paralelo reduce la latencia total. |
 | **LoopAgent** | `code_refinement` | La generación de código BDI requiere refinamiento iterativo: generar → probar → corregir hasta obtener un resultado sin errores de compilación. |
 
 ## 3. Herramientas (Tools)
 
 | Tool | Descripción |
 |------|-------------|
-| `search_github_examples(path)` | Accede a la API de GitHub para consultar los ejemplos oficiales del repositorio `jason-lang/jason`. |
+| `search_github_examples(path)` | Accede a los ejemplos oficiales del proyecto Jason para consultar código de referencia. |
 | `search_local_docs(query, k)` | Búsqueda semántica RAG sobre la documentación local (PDFs) indexada con ChromaDB y embeddings ONNX. |
 | `test_mas_code(mas2j_code, agents_dict)` | Compila y ejecuta el MAS en un directorio temporal usando el binario de Jason. Máximo 5 intentos por sesión. |
 | `save_mas_code(mas_name, ...)` | Persiste el proyecto final en `output/nombre_proyecto/`. |
